@@ -8,4 +8,17 @@
     <string name="hint_age">请输入年龄</string>
     <string name="display_info">显示信息</string>
     <string name="delete_info">删除显示</string>
+    <string name="setting">设置</string>
+    <string name="mail">邮件</string>
+    <string name="newing">新建</string>
+    <string name="print">打印</string>
+    <string name="title_activity_infomation_show">InfomationShowActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>

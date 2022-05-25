@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/popup_setting"
+        android:title="@string/setting"/>
+
+    <item
+        android:id="@+id/popup_mail"
+        android:title="@string/mail"/>
+
+    <item
+        android:id="@+id/popup_new"
+        android:title="@string/newing"/>
+
+    <item
+        android:id="@+id/popup_print"
+        android:title="@string/print"/>
+
+
+</menu>
