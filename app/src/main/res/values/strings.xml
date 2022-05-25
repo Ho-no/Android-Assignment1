@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Android-Assignment1</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="hint_name">请输入姓名</string>
+    <string name="hint_height">请输入身高</string>
+    <string name="hint_age">请输入年龄</string>
+    <string name="display_info">显示信息</string>
+    <string name="delete_info">删除显示</string>
+</resources>
