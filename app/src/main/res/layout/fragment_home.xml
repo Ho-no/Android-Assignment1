@@ -13,6 +13,7 @@
         android:layout_margin="@dimen/cardview_default_elevation"
         android:hint="@string/hint_name"
         android:inputType="textPersonName|none"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,6 +24,7 @@
         android:layout_margin="@dimen/cardview_default_elevation"
         android:hint="@string/hint_age"
         android:inputType="number|none"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edit_text_home_name" />
 
@@ -31,13 +33,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/cardview_default_elevation"
-        android:layout_marginStart="2dp"
         android:layout_marginTop="2dp"
         android:hint="@string/hint_height"
         android:inputType="numberDecimal|none"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_home_age"
+        android:minHeight="48dp"
 
-        app:layout_constraintEnd_toStartOf="parent"/>
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_home_age" />
 
     <Button
         android:id="@+id/display_button_home"

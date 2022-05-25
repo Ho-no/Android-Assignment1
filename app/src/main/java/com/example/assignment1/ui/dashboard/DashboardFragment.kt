@@ -1,5 +1,6 @@
 package com.example.assignment1.ui.dashboard
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -11,6 +12,7 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.example.assignment1.InformationShowActivity
 import com.example.assignment1.databinding.FragmentDashboardBinding
 import java.lang.Exception
 
@@ -89,7 +91,9 @@ class DashboardFragment : Fragment() {
         })
 
         buttonDisplay.setOnClickListener {
-
+            val intent = Intent(context, InformationShowActivity::class.java)
+            intent.putExtra("msg", dashboardViewModel.text.value)
+            startActivity(intent)
         }
 
         buttonDelete.setOnClickListener {
