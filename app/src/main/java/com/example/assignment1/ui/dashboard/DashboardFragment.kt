@@ -1,13 +1,18 @@
 package com.example.assignment1.ui.dashboard
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.assignment1.databinding.FragmentDashboardBinding
+import java.lang.Exception
 
 class DashboardFragment : Fragment() {
 
@@ -28,9 +33,69 @@ class DashboardFragment : Fragment() {
         _binding = FragmentDashboardBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textDashboard
-        dashboardViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+        val editTextName: EditText = binding.editTextHomeName
+        val editTextAge: EditText = binding.editTextHomeAge
+        val editTextHeight: EditText = binding.editTextHomeHeight
+
+        val buttonDisplay: Button = binding.displayButtonHome
+        val buttonDelete: Button = binding.deleteButtonHome
+
+        editTextAge.addTextChangedListener(object: TextWatcher {
+            override fun beforeTextChanged(s:CharSequence, start:Int, count:Int, after:Int) {
+
+            }
+            override fun onTextChanged(s:CharSequence, start:Int, count:Int, after:Int) {
+
+            }
+            override fun afterTextChanged(s: Editable?) {
+                try {
+                    val content = s.toString().toInt()
+                    dashboardViewModel.updateAge(content)
+                } catch (e: Exception) {
+                    dashboardViewModel.updateAge(0)
+                }
+
+            }
+        })
+
+        editTextName.addTextChangedListener(object: TextWatcher {
+            override fun beforeTextChanged(s:CharSequence, start:Int, count:Int, after:Int) {
+
+            }
+            override fun onTextChanged(s:CharSequence, start:Int, count:Int, after:Int) {
+
+            }
+            override fun afterTextChanged(s: Editable?) {
+                val content = s.toString()
+                dashboardViewModel.updateName(content)
+            }
+        })
+
+        editTextHeight.addTextChangedListener(object: TextWatcher {
+            override fun beforeTextChanged(s:CharSequence, start:Int, count:Int, after:Int) {
+
+            }
+            override fun onTextChanged(s:CharSequence, start:Int, count:Int, after:Int) {
+
+            }
+            override fun afterTextChanged(s: Editable?) {
+                try {
+                    val content = s.toString().toDouble()
+                    dashboardViewModel.updateHeight(content)
+                } catch (e: Exception) {
+                    dashboardViewModel.updateHeight(0.0)
+                }
+            }
+        })
+
+        buttonDisplay.setOnClickListener {
+
+        }
+
+        buttonDelete.setOnClickListener {
+            editTextAge.text = null
+            editTextHeight.text = null
+            editTextName.text = null
         }
         return root
     }

@@ -14,6 +14,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.assignment1.databinding.FragmentHomeBinding
+import java.lang.Exception
 
 class HomeFragment : Fragment() {
 
@@ -57,8 +58,12 @@ class HomeFragment : Fragment() {
 
             }
             override fun afterTextChanged(s: Editable?) {
-                val content = s.toString().toInt()
-                homeViewModel.updateAge(content)
+                try {
+                    val content = s.toString().toInt()
+                    homeViewModel.updateAge(content)
+                } catch (e: Exception) {
+                    homeViewModel.updateAge(0)
+                }
             }
         })
 
@@ -83,8 +88,12 @@ class HomeFragment : Fragment() {
 
             }
             override fun afterTextChanged(s: Editable?) {
-                val content = s.toString().toDouble()
-                homeViewModel.updateHeight(content)
+                try {
+                    val content = s.toString().toDouble()
+                    homeViewModel.updateHeight(content)
+                } catch (e: Exception) {
+                    homeViewModel.updateHeight(0.0)
+                }
             }
         })
 
